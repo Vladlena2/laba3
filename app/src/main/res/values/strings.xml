@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">laba3</string>
+    <string name="view">Просмотреть одногруппников</string>
+    <string name="add">Добавить запись</string>
+    <string name="update">Изменить последнюю запись</string>
+    <string name="inf">Информация о студентах</string>
+</resources>
