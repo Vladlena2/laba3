@@ -32,7 +32,6 @@ public class ActivityViewStudents extends AppCompatActivity {
         managerStudent = new ManagerStudent(this);
     }
 
-    // Метод для получения данных о студентах
     private String getStudentsData() {
         StringBuilder stringBuilder = new StringBuilder();
         Cursor cursor = null;
@@ -40,10 +39,12 @@ public class ActivityViewStudents extends AppCompatActivity {
         try {
             cursor = managerStudent.getAllStudents();
             while (cursor.moveToNext()) {
-                String name = cursor.getString(cursor.getColumnIndexOrThrow("FIO")); // Используем строковые литералы для имен столбцов
-                String timestamp = cursor.getString(cursor.getColumnIndexOrThrow("TIMESTAMP")); // Используем строковые литералы для имен столбцов
+                String lastName = cursor.getString(cursor.getColumnIndexOrThrow("LastName"));
+                String firstName = cursor.getString(cursor.getColumnIndexOrThrow("FirstName"));
+                String middleName = cursor.getString(cursor.getColumnIndexOrThrow("SureName"));
+                String timestamp = cursor.getString(cursor.getColumnIndexOrThrow("TIMESTAMP"));
 
-                stringBuilder.append("ФИО: ").append(name).append("\n");
+                stringBuilder.append("ФИО: ").append(lastName).append(" ").append(firstName).append(" ").append(middleName).append("\n");
                 stringBuilder.append("Дата добавления: ").append(timestamp).append("\n\n");
             }
         } catch (Exception e) {
