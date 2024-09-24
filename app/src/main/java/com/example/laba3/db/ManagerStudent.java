@@ -51,7 +51,6 @@ public class ManagerStudent {
         cv.put(ContractStudent.COLUMN_LAST_NAME, lastName);
         cv.put(ContractStudent.COLUMN_FIRST_NAME, firstName);
         cv.put(ContractStudent.COLUMN_MIDDLE_NAME, middleName);
-        cv.put(ContractStudent.COLUMN_TIMESTAMP, System.currentTimeMillis());
         db.insert(ContractStudent.TABLE_NAME, null, cv);
     }
 
